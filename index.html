@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="app">
+        <form  action="#" class="form">
+          <input type="text" name="title"  placeholder="Title" v-model="title"><br>
+          <input type="text" name="description"  placeholder="description" v-model="description"><br>
+          <input type="number" name="Status" placeholder="author_id" v-model="userId"><br>
+          <input v-show="isCreate" type="button" value="Submit">
+
+          <input v-show="isUpdate" type="button" value="Update Item">
+        </form>
+    
+        <div class="myCard">
+            <div class="card" v-for="item of books">
+                <div class="card-body">
+                  <h5 class="card-title">{{item.title}}</h5>
+                  <p class="card-text">{{item.description}}</p>
+                  <p class="card-text">{{item.created_at}}</p>
+                  <button @click="Update(item)"  type="button" class="btn btn-primary">Edit</button>
+                  <button @click="deleteItem(item)" type="button" class="btn btn-danger ml-lg-2">Delete</button>
+                </div>
+              </div>
+        </div>
+       
+    
+    </div>
+    
+
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/app.js"></script>
+</html>
